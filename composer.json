@@ -1,0 +1,22 @@
+{
+    "name": "itx/migrator",
+    "description": "it.x Migrator",
+    "type": "typo3-cms-extension",
+    "license": [
+        "GPL-2.0-or-later"
+    ],
+    "require": {
+        "typo3/cms-core": "^12.4",
+        "doctrine/migrations": "^3.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Itx\\Migrator\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "migrator"
+        }
+    }
+}

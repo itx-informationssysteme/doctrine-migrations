@@ -1,0 +1,93 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Itx\Migrator\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  migratorDependencyFactory:
+    class: Doctrine\Migrations\DependencyFactory
+    factory: ['@Itx\Migrator\DependencyFactory', 'createFactory']
+
+  Doctrine\Migrations\Tools\Console\Command\DumpSchemaCommand:
+    tags:
+        - name: console.command
+          command: 'migrator:dumpSchema'
+          description: 'Dumps Schema'
+    arguments:
+      $dependencyFactory: '@migratorDependencyFactory'
+
+  Doctrine\Migrations\Tools\Console\Command\ExecuteCommand:
+    tags:
+        - name: console.command
+          command: 'migrator:execute'
+          description: 'Executes Migration'
+    arguments:
+      $dependencyFactory: '@migratorDependencyFactory'
+
+  Doctrine\Migrations\Tools\Console\Command\GenerateCommand:
+    tags:
+        - name: console.command
+          command: 'migrator:generate'
+          description: 'Generates new migration file'
+    arguments:
+      $dependencyFactory: '@migratorDependencyFactory'   
+
+  Doctrine\Migrations\Tools\Console\Command\LatestCommand:
+    tags:
+        - name: console.command
+          command: 'migrator:latest'
+          description: 'Migrates to Latest Version'
+    arguments:
+      $dependencyFactory: '@migratorDependencyFactory'
+      
+  Doctrine\Migrations\Tools\Console\Command\ListCommand:
+    tags:
+        - name: console.command
+          command: 'migrator:list'
+          description: 'Lists Versions'
+    arguments:
+      $dependencyFactory: '@migratorDependencyFactory'   
+
+  Doctrine\Migrations\Tools\Console\Command\MigrateCommand:
+    tags:
+        - name: console.command
+          command: 'migrator:migrate'
+          description: 'Migrate to specified version'
+    arguments:
+      $dependencyFactory: '@migratorDependencyFactory'     
+
+  Doctrine\Migrations\Tools\Console\Command\RollupCommand:
+    tags:
+        - name: console.command
+          command: 'migrator:rollup'
+          description: ''
+    arguments:
+      $dependencyFactory: '@migratorDependencyFactory'  
+
+  Doctrine\Migrations\Tools\Console\Command\StatusCommand:
+    tags:
+        - name: console.command
+          command: 'migrator:status'
+          description: 'Shows the migration status'
+    arguments:
+      $dependencyFactory: '@migratorDependencyFactory' 
+
+  Doctrine\Migrations\Tools\Console\Command\SyncMetadataCommand:
+    tags:
+        - name: console.command
+          command: 'migrator:syncMetadata'
+          description: 'Syncs metadata'
+    arguments:
+      $dependencyFactory: '@migratorDependencyFactory'   
+
+  Doctrine\Migrations\Tools\Console\Command\VersionCommand:
+    tags:
+        - name: console.command
+          command: 'migrator:version'
+          description: 'Shows the migrator version'
+    arguments:
+      $dependencyFactory: '@migratorDependencyFactory'              
