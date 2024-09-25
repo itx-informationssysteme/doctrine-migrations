@@ -49,7 +49,7 @@ class ArrayConfig implements ConfigurationLoader{
             ],
         
             'migrations_paths' => [
-                $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['migrator']['Namespace'] => $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['migrator']['FileLocation'],
+                $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['migrator']['Namespace'] => ExtensionManagementUtility::extPath($GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['migrator']['ExtensionKey'], '/Classes/Migrations'),
             ],
         
             'all_or_nothing' => $this->all_or_nothing,

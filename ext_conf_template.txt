@@ -1,4 +1,4 @@
-# cat=FileLocation; type=string; label=File Location: Enter the location where you want your Version files to be saved, relative to the location of ext_conf_template.txt file in this extension
-FileLocation =
-# cat=Namespace; type=string; label=Namespace: Enter the namespace in which your Version files will be saved
+# cat=ExtensionKey; type=string; label=Extension Key: Enter the extension key of the extension the version files should be saved in
+ExtensionKey =
+# cat=Namespace; type=string; label=Namespace: Enter the namespace in which your version files will be saved
 Namespace =
