@@ -4,7 +4,6 @@ namespace Itx\Migrator;
 
 use Doctrine\Migrations\DependencyFactory as Doctrine;
 use Doctrine\DBAL\DriverManager;
-use Doctrine\Migrations\Configuration\Migration\PhpFile;
 use Doctrine\Migrations\Configuration\Connection\ExistingConnection;
 use Psr\Log\LoggerInterface;
 
@@ -22,7 +21,7 @@ class DependencyFactory {
         
         $connection = DriverManager::getConnection($dbParams);
 
-        $config = new PhpFile('packages/migrator/migrations.php'); // Or use one of the Doctrine\Migrations\Configuration\Configuration\* loaders
+        $config = new ArrayConfig();
 
         return Doctrine::fromConnection($config, new ExistingConnection($connection), $logger);
     }
