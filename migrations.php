@@ -1,5 +1,7 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\PathUtility;
+
 return [
     'table_storage' => [
         'table_name' => 'doctrine_migration_versions',
@@ -10,7 +12,7 @@ return [
     ],
 
     'migrations_paths' => [
-        'Itx\Migrator\Migrations' => $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['migrator']['FileLocation'],
+        $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['migrator']['Namespace'] => $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['migrator']['FileLocation'],
     ],
 
     'all_or_nothing' => true,

@@ -21,9 +21,9 @@ class DependencyFactory {
         ];
         
         $connection = DriverManager::getConnection($dbParams);
-        
+
         $config = new PhpFile('packages/migrator/migrations.php'); // Or use one of the Doctrine\Migrations\Configuration\Configuration\* loaders
-        
+
         return Doctrine::fromConnection($config, new ExistingConnection($connection), $logger);
     }
 }
