@@ -4,90 +4,90 @@ services:
     autoconfigure: true
     public: false
 
-  Itx\Migrator\:
+  Itx\DoctrineMigrations\:
     resource: '../Classes/*'
     exclude: '../Classes/Domain/Model/*'
 
-  migratorDependencyFactory:
+  migrationsDependencyFactory:
     class: Doctrine\Migrations\DependencyFactory
-    factory: ['@Itx\Migrator\DependencyFactory', 'createFactory']
+    factory: ['@Itx\DoctrineMigrations\DependencyFactory', 'createFactory']
 
   Doctrine\Migrations\Tools\Console\Command\DumpSchemaCommand:
     tags:
         - name: console.command
-          command: 'migrator:dumpSchema'
+          command: 'migrations:dumpSchema'
           description: 'Dumps Schema'
     arguments:
-      $dependencyFactory: '@migratorDependencyFactory'
+      $dependencyFactory: '@migrationsDependencyFactory'
 
   Doctrine\Migrations\Tools\Console\Command\ExecuteCommand:
     tags:
         - name: console.command
-          command: 'migrator:execute'
+          command: 'migrations:execute'
           description: 'Executes Migration'
     arguments:
-      $dependencyFactory: '@migratorDependencyFactory'
+      $dependencyFactory: '@migrationsDependencyFactory'
 
   Doctrine\Migrations\Tools\Console\Command\GenerateCommand:
     tags:
         - name: console.command
-          command: 'migrator:generate'
+          command: 'migrations:generate'
           description: 'Generates new migration file'
     arguments:
-      $dependencyFactory: '@migratorDependencyFactory'   
+      $dependencyFactory: '@migrationsDependencyFactory'   
 
   Doctrine\Migrations\Tools\Console\Command\LatestCommand:
     tags:
         - name: console.command
-          command: 'migrator:latest'
+          command: 'migrations:latest'
           description: 'Migrates to Latest Version'
     arguments:
-      $dependencyFactory: '@migratorDependencyFactory'
+      $dependencyFactory: '@migrationsDependencyFactory'
       
   Doctrine\Migrations\Tools\Console\Command\ListCommand:
     tags:
         - name: console.command
-          command: 'migrator:list'
+          command: 'migrations:list'
           description: 'Lists Versions'
     arguments:
-      $dependencyFactory: '@migratorDependencyFactory'   
+      $dependencyFactory: '@migrationsDependencyFactory'   
 
   Doctrine\Migrations\Tools\Console\Command\MigrateCommand:
     tags:
         - name: console.command
-          command: 'migrator:migrate'
+          command: 'migrations:migrate'
           description: 'Migrate to specified version'
     arguments:
-      $dependencyFactory: '@migratorDependencyFactory'     
+      $dependencyFactory: '@migrationsDependencyFactory'     
 
   Doctrine\Migrations\Tools\Console\Command\RollupCommand:
     tags:
         - name: console.command
-          command: 'migrator:rollup'
+          command: 'migrations:rollup'
           description: ''
     arguments:
-      $dependencyFactory: '@migratorDependencyFactory'  
+      $dependencyFactory: '@migrationsDependencyFactory'  
 
   Doctrine\Migrations\Tools\Console\Command\StatusCommand:
     tags:
         - name: console.command
-          command: 'migrator:status'
+          command: 'migrations:status'
           description: 'Shows the migration status'
     arguments:
-      $dependencyFactory: '@migratorDependencyFactory' 
+      $dependencyFactory: '@migrationsDependencyFactory' 
 
   Doctrine\Migrations\Tools\Console\Command\SyncMetadataCommand:
     tags:
         - name: console.command
-          command: 'migrator:syncMetadata'
+          command: 'migrations:syncMetadata'
           description: 'Syncs metadata'
     arguments:
-      $dependencyFactory: '@migratorDependencyFactory'   
+      $dependencyFactory: '@migrationsDependencyFactory'   
 
   Doctrine\Migrations\Tools\Console\Command\VersionCommand:
     tags:
         - name: console.command
-          command: 'migrator:version'
-          description: 'Shows the migrator version'
+          command: 'migrations:version'
+          description: 'Shows the migrations version'
     arguments:
-      $dependencyFactory: '@migratorDependencyFactory'              
+      $dependencyFactory: '@migrationsDependencyFactory'              
