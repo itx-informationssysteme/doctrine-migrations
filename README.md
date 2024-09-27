@@ -6,7 +6,7 @@ Migrations are defined in versioned files, which can be created and executed via
 ## Installation (Composer)
 * Add the extension by executing `composer req itx/doctrine-migrations:<version>`
 * Create a folder e.g. `Classes/Migrations` inside your extension's folder
-* In the TYPO3 Backend, add the path where you want to save your version files and the appropriate namespace at `Settings > Extension Configuration > migrator`
+* In the TYPO3 Backend, add the path where you want to save your version files and the appropriate namespace at `Settings > Extension Configuration > doctrine_migrations`
 * Alternatively you can configure these paths inside your additional.php file
 e.g.
 ```php
