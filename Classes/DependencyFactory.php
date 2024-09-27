@@ -13,10 +13,10 @@ class DependencyFactory
     public static function createFactory(LoggerInterface|null $logger = null): ?Doctrine
     {
         $dbParams = [
-            'dbname' => $GLOBALS['TYPO3_CONF_VARS']['DB']['dbname'],
-            'user' => $GLOBALS['TYPO3_CONF_VARS']['DB']['user'],
-            'password' => $GLOBALS['TYPO3_CONF_VARS']['DB']['password'],
-            'host' => $GLOBALS['TYPO3_CONF_VARS']['DB']['host'],
+            'dbname' => $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['dbname'],
+            'user' => $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['user'],
+            'password' => $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['password'],
+            'host' => $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['host'],
             'driver' => $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['driver'],
         ];
 
