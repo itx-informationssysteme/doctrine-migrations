@@ -4,14 +4,14 @@ This extension provides a CLI for [doctrine migrations](https://www.doctrine-pro
 Migrations are defined in versioned files, which can be created and executed via the CLI.
 
 ## Installation (Composer)
-* Add the extension by executing `composer req itx/doctrine-migrations:<version>`
+* Add the extension by executing `composer req itx/doctrine-migrations`
 * Create a folder e.g. `Classes/Migrations` inside your extension's folder
 * In the TYPO3 Backend, add the path where you want to save your version files and the appropriate namespace at `Settings > Extension Configuration > doctrine_migrations`
 * Alternatively you can configure these paths inside your additional.php file
 e.g.
 ```php
 $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['doctrine_migrations']['migrationFilesLocation'] = 'EXT:your_extension/Migrations';
-$GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['doctrine_migrations']['migrationsFilesNamespace'] = 'YourExtension\Migrations';
+$GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['doctrine_migrations']['migrationFilesNamespace'] = 'YourVendor\YourExtension\Migrations';
 ```
 
 Optionally you can override the [default doctrine migrations](https://www.doctrine-project.org/projects/doctrine-migrations/en/3.8/reference/configuration.html#migrations-configuration) configuration by
