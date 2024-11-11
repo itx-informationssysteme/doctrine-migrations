@@ -47,8 +47,3 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['doctrine_migrations']['overrideConfigura
 
 ## Further Info
  * For more information on doctrine migrations, refer to [the official doctrine documentation](https://www.doctrine-project.org/projects/doctrine-migrations/en/3.8/reference/introduction.html#introduction)
-
-##TODO
-* Implement TYPO3 v13 support fully
-* Make TYPO3 stop trying to delete the migrations database table
-* Icons
