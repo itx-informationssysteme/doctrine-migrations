@@ -45,10 +45,8 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['doctrine_migrations']['overrideConfigura
 * Alternatively, you can use the keywords `first`, `latest`, `prev` or `next` after `vendor/bin/typo3 migrations:migrate` to migrate to the first, latest, previous or next migration file respectively
 * For more information on these and some more commands and their options refer to [this](https://www.doctrine-project.org/projects/doctrine-migrations/en/3.8/reference/managing-migrations.html)
 
+## Troubleshooting
+* If you get permission errors while trying to save your modified version files, try running `chmod g+w -R *` in the container bash 
+
 ## Further Info
  * For more information on doctrine migrations, refer to [the official doctrine documentation](https://www.doctrine-project.org/projects/doctrine-migrations/en/3.8/reference/introduction.html#introduction)
-
-##TODO
-* Implement TYPO3 v13 support fully
-* Make TYPO3 stop trying to delete the migrations database table
-* Icons
