@@ -42,8 +42,8 @@ class DependencyFactory
             'migrations_paths' => [
                 $migrationsFilesNamespace => $migrationsFilesLocation,
             ],
-            'all_or_nothing' => true,
-            'transactional' => true,
+            'all_or_nothing' => ($GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['doctrine_migrations']['enableAllOrNothing'] ?? 0) == 1,
+            'transactional' => ($GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['doctrine_migrations']['enableTransaction'] ?? 0) == 1,
             'check_database_platform' => true,
             'organize_migrations' => 'none',
             'connection' => null,
