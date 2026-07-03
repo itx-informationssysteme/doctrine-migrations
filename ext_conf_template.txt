@@ -2,3 +2,7 @@
 migrationFilesLocation =
 # cat=General; type=string; label=Namespace: Enter the namespace which your migration files should have e.g. SitePackage\Migrations
 migrationFilesNamespace =
+# cat=General; type=boolean; label=Enable all or nothing mode: Choose whether to enable "all or nothing" mode. Turn this off if you get DBAL Savepoint errors when migrating
+enableAllOrNothing =
+# cat=General; type=boolean; label=Enable transactions: Chose whether to enable transactions. Turn this off if you get DBAL Savepoint errors when migrating
+enableTransaction =

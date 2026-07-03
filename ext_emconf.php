@@ -10,7 +10,7 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'extensions',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0-12.4.99',
+            'typo3' => '11.5.0-14.3.99',
         ],
         'conflicts' => [
         ],
@@ -25,6 +25,6 @@ $EM_CONF[$_EXTKEY] = [
     'createDirs' => '',
     'clearCacheOnLoad' => 1,
     'author' => 'it.x informationssysteme gmbh',
-    'author_email' => '',
+    'author_email' => 'support@itx.de',
     'version' => '1.0.2',
 ];

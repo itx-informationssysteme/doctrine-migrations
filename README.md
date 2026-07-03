@@ -24,6 +24,8 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['doctrine_migrations']['overrideConfigura
 ];
 ```
 
+Additionally, you can toggle transactions and "all or nothing" in the extension settings, if your chosen DB doesn't support those
+
 ## Usage
 * The extension is controlled via CLI
 * You can use commands with `vendor/bin/typo3 migrations:<command> <option>`
@@ -46,7 +48,7 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['doctrine_migrations']['overrideConfigura
 * For more information on these and some more commands and their options refer to [this](https://www.doctrine-project.org/projects/doctrine-migrations/en/3.8/reference/managing-migrations.html)
 
 ## Troubleshooting
-* If you get permission errors while trying to save your modified version files, try running `chmod g+w -R *` in the container bash 
+* If you get permission errors while trying to save your modified version files, try running `chmod g+w -R *` in the container bash
 
 ## Further Info
  * For more information on doctrine migrations, refer to [the official doctrine documentation](https://www.doctrine-project.org/projects/doctrine-migrations/en/3.8/reference/introduction.html#introduction)
